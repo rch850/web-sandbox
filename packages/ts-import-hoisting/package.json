@@ -1,0 +1,18 @@
+{
+  "name": "ts-import-hoisting",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.commonjs.js; webpack --config webpack.es2015.js",
+    "start": "npm run start:commonjs; npm run start:es2015",
+    "start:commonjs": "node ./dist/main.commonjs.js",
+    "start:es2015": "node ./dist/main.es2015.js"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.0.2",
+    "typescript": "^3.5.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.2"
+  }
+}
