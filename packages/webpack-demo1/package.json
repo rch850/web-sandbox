@@ -4,6 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "build": "webpack"
   },
   "devDependencies": {
     "css-loader": "^3.0.0",
