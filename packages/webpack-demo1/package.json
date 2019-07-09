@@ -1,0 +1,16 @@
+{
+  "name": "webpack-demo1",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+  },
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  }
+}
