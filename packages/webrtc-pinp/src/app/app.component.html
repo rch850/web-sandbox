@@ -4,6 +4,14 @@
     height="480"
     autoplay
 ></video>
-<button (click)="onSetupCameraClick()">Setup Camera</button>
+<video
+    #remoteVideo
+    width="640"
+    height="480"
+    autoplay
+></video>
+<button (click)="onSetupHostClick()">Setup as Host</button>
+<button (click)="onSetupGuestClick()">Setup as Guest</button>
+<input [(ngModel)]="apiBase">
 
 <router-outlet></router-outlet>
