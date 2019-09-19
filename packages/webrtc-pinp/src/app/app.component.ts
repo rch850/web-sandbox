@@ -4,11 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
   title = 'webrtc-pinp';
-  apiBase = 'https://192.168.11.2:8080'
+  apiBase = `https://${location.hostname}:8080`
 
   @ViewChild('localVideo') localVideo: ElementRef<HTMLVideoElement>
   @ViewChild('remoteVideo') remoteVideo: ElementRef<HTMLVideoElement>
