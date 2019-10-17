@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "lazy-loading-angular"
+  "defaultProject": "lazy-loading-angular",
+  "cli": {
+    "packageManager": "yarn"
+  }
 }
