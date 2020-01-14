@@ -1,0 +1,14 @@
+{
+  "name": "snowpack-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "htm": "^2.2.1",
+    "preact": "10"
+  },
+  "devDependencies": {
+    "snowpack": "^1.0.5"
+  }
+}
