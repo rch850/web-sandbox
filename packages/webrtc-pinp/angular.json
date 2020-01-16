@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "webrtc-pinp"
+  "defaultProject": "webrtc-pinp",
+  "cli": {
+    "packageManager": "yarn"
+  }
 }
