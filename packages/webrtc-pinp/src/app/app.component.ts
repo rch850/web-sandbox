@@ -10,8 +10,8 @@ export class AppComponent {
   title = 'webrtc-pinp';
   apiBase = `https://${location.hostname}:8080`
 
-  @ViewChild('localVideo') localVideo: ElementRef<HTMLVideoElement>
-  @ViewChild('remoteVideo') remoteVideo: ElementRef<HTMLVideoElement>
+  @ViewChild('localVideo', { static: false }) localVideo: ElementRef<HTMLVideoElement>
+  @ViewChild('remoteVideo', { static: false }) remoteVideo: ElementRef<HTMLVideoElement>
 
   constructor (
     private http: HttpClient
