@@ -1,9 +1,20 @@
 import Head from 'next/head'
+import fetch from 'node-fetch'
 
-const Home = () => (
+export async function getStaticProps() {
+  const res = await fetch('https://www.stopcovid19.jp/data/covid19japan-all.json')
+  const json = await res.json()
+  return {
+    props: {
+      days: json
+    }
+  }
+}
+
+const Home = ({ days }) => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
+      <title>COVID-19 Chart</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
@@ -11,6 +22,12 @@ const Home = () => (
       <h1 className="title">
         Welcome to <a href="https://nextjs.org">Next.js!</a>
       </h1>
+
+      <div>
+        { days.map(day => (
+          <div>Date: { day.lastUpdate }</div>
+        ))}
+      </div>
 
       <p className="description">
         Get started by editing <code>pages/index.js</code>
