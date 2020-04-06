@@ -3,6 +3,8 @@ import Head from 'next/head'
 import fetch from 'node-fetch'
 import Chart from 'chart.js'
 
+const populations = [5286, 1263, 1241, 2316, 981, 1090, 1864, 2877, 1946, 1952, 7330, 6255, 13822, 9177, 2246, 1050, 1143, 774, 817, 2063, 1997, 3659, 7537, 1791, 1412, 2591, 8813, 5484, 1339, 935, 560, 680, 1898, 2817, 1370, 736, 962, 1352, 706, 5107, 819, 1341, 1757, 1144, 1081, 1614, 1448]
+
 export async function getStaticProps() {
   const res = await fetch('https://www.stopcovid19.jp/data/covid19japan-all.json')
   const json = await res.json()
@@ -14,16 +16,17 @@ export async function getStaticProps() {
 }
 
 function buildChartData(day) {
-  console.log(day)
   const labels = day.area.map(a => a.name_jp)
   const npatients = day.area.map(a => a.npatients)
+  const npatientsPerPopl = day.area.map((a, i) => a.npatients / populations[i] * 100)
   const ncurrentpatients = day.area.map(a => a.ncurrentpatients)
   return {
     labels,
     datasets: [{
-      label: '感染者数',
+      label: '10万人あたりの感染者数',
       // data: ncurrentpatients,
-      data: npatients,
+      // data: npatients,
+      data: npatientsPerPopl,
       borderWidth: 1
     }]
   }
@@ -32,10 +35,25 @@ function buildChartData(day) {
 const Home = ({ days }) => {
   useEffect(() => {
     const ctx = document.getElementById('canvas').getContext('2d')
+    let day = 0
+
     const myChart = new Chart(ctx, {
-      type: 'bar',
-      data: buildChartData(days[days.length - 1])
+      type: 'horizontalBar',
+      data: buildChartData(days[day])
     })
+
+    let intervalId = setInterval(() => {
+      day++
+      if (day >= days.length) {
+        clearInterval(intervalId)
+        return
+      }
+      const newData = buildChartData(days[day])
+      newData.datasets[0].data.forEach((value, index) => {
+        myChart.data.datasets[0].data[index] = value
+      })
+      myChart.update()
+    }, 1000)
   })
   return (
   <div className="container">
@@ -46,10 +64,16 @@ const Home = ({ days }) => {
 
     <main>
       <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        都道府県別の感染者数推移
       </h1>
 
-      <canvas id="canvas" width="400" height="300"/>
+      <canvas id="canvas" width="300" height="600"/>
+
+      <div>
+        出典<br></br>
+        <a href="https://github.com/code4sabae/covid19">都道府県別、日別の感染者数</a><br></br>
+        <a href="https://www.e-stat.go.jp/dbview?sid=0003312316">人口推計 平成30年10月1日現在人口推計 - e-Stat</a><br></br>
+      </div>
     </main>
 
     <footer>
@@ -119,7 +143,7 @@ const Home = ({ days }) => {
       .title {
         margin: 0;
         line-height: 1.15;
-        font-size: 4rem;
+        font-size: 2rem;
       }
 
       .title,
