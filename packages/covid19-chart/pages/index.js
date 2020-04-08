@@ -39,7 +39,13 @@ const Home = ({ days }) => {
 
     const myChart = new Chart(ctx, {
       type: 'horizontalBar',
-      data: buildChartData(days[day])
+      data: buildChartData(days[day]),
+      options: {
+        title: {
+          display: true,
+          text: days[day].lastUpdate
+        }
+      }
     })
 
     let intervalId = setInterval(() => {
@@ -52,6 +58,7 @@ const Home = ({ days }) => {
       newData.datasets[0].data.forEach((value, index) => {
         myChart.data.datasets[0].data[index] = value
       })
+      myChart.options.title.text = days[day].lastUpdate
       myChart.update()
     }, 1000)
   })
