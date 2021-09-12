@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    max-width: 640px;
+    margin: 32px auto;
+}
+input {
+    accent-color: red;
+}

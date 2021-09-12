@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>もくもくの名門</title>
+    <script src="./one-time-code.js" type="module"></script>
+    <script src="./cute-badge.js" type="module"></script>
+    <script src="./open-time.js" type="module"></script>
+</head>
+<body>
+    <h2>もくもくの名門</h2>
+    <form>
+        <div>
+            <div>
+                <label>
+                    <input type="checkbox"> ジュンケイ
+                    <cute-badge text="噛むほどにあふれる肉汁！"></cute-badge>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox"> しろ
+                    <cute-badge text="あっという間20本"></cute-badge>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox"> ねぎま
+                    <cute-badge text="みんな大好き"></cute-badge>
+                </label>
+            </div>
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="n" value="junkei"> 持ち帰り
+            </label>
+            <label>
+                <input type="radio" name="n" value="negima"> 店内 
+            </label>
+        </div>
+        <div>
+            <label>
+                認証コード
+                <input is="one-time-code" name="otp">
+            </label>
+        </div>
+    </form>
+
+    <open-time open="14" close="20"></open-time>
+    <ul>
+        <li>Chrome 93 以上でご覧ください。</li>
+        <li><a href="https://github.com/rch850/web-sandbox/blob/master/docs/demo-fukumoku-202109/">ソースと解説</a></li>
+    </ul>
+</body>
+</html>
