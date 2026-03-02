@@ -418,6 +418,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular/core@npm:~19.2.19":
+  version: 19.2.19
+  resolution: "@angular/core@npm:19.2.19"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  peerDependencies:
+    rxjs: ^6.5.3 || ^7.4.0
+    zone.js: ~0.15.0
+  checksum: 10c0/b6f8477fa4bc788171e4b3edcf427306848f014a09ef5e6d26399bd16f1fed57ed233c639d52806300e9748543364addd40df2e92ecae0dfb78a2da848eb3777
+  languageName: node
+  linkType: hard
+
 "@angular/core@npm:~7.2.0":
   version: 7.2.15
   resolution: "@angular/core@npm:7.2.15"
@@ -427,18 +439,6 @@ __metadata:
     rxjs: ^6.0.0
     zone.js: ~0.8.26
   checksum: 10c0/39c36dbad7386c4717b3b6ebcb3cff2984ece8b225f5281b5626216927ec5f4c29f818328394e78e78c4a8c750fbf849a3877376a39b9542e82218b15d5e0476
-  languageName: node
-  linkType: hard
-
-"@angular/core@npm:~8.2.9":
-  version: 8.2.11
-  resolution: "@angular/core@npm:8.2.11"
-  dependencies:
-    tslib: "npm:^1.9.0"
-  peerDependencies:
-    rxjs: ^6.4.0
-    zone.js: ~0.9.1
-  checksum: 10c0/2e9c550eca4a470f75e36a4a6c8e0fafb90505bde1a664b339617fe752a757670ad179e2571ad31ed66935026aa38edc5bf4f4b02f5d6427ca7fd0cfdb123f0c
   languageName: node
   linkType: hard
 
@@ -12086,7 +12086,7 @@ __metadata:
     "@angular/common": "npm:~8.2.9"
     "@angular/compiler": "npm:~8.2.9"
     "@angular/compiler-cli": "npm:~8.2.9"
-    "@angular/core": "npm:~8.2.9"
+    "@angular/core": "npm:~19.2.19"
     "@angular/forms": "npm:~8.2.9"
     "@angular/language-service": "npm:~8.2.9"
     "@angular/platform-browser": "npm:~8.2.9"
@@ -19624,7 +19624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.1, tslib@npm:^2.1.0":
+"tslib@npm:^2.0.1, tslib@npm:^2.1.0, tslib@npm:^2.3.0":
   version: 2.8.1
   resolution: "tslib@npm:2.8.1"
   checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
